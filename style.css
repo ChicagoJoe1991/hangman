@@ -1,0 +1,92 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+.figure {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    border: 5px solid blue;
+}
+#noose {
+    display: absolute;
+    width: 100%;
+    height: 100vh;
+    border: 5px solid blue;
+}
+#noose img {
+    position: absolute;
+    right: 40vh;
+    bottom: 5vh;
+    height: 100vh;
+    border: 5px solid blue;
+    z-index: 1;
+
+}
+#stickhead {
+    z-index: 2;   
+    position: absolute;
+    right: 112.5vh;
+    top: 18vh;
+    height: fit-content;
+}
+#stickhead img {
+    height: 190px;
+    z-index: 2;    
+}
+#stickbody {
+    z-index: 2;   
+    position: absolute;
+    right: 120vh;
+    top: 33vh;
+    height: fit-content;
+}
+#stickbody img {
+    height: 260px;
+    z-index: 2; 
+}
+#la {
+    z-index: 2;   
+    position: absolute;
+    right: 122.6vh;
+    top: 37vh;
+    height: fit-content;
+}
+#la img {
+    height: 110px;
+    z-index: 2; 
+}
+#ra {
+    z-index: 2;   
+    position: absolute;
+    right: 114vh;
+    top: 37vh;
+    height: fit-content;
+}
+#ra img {
+    height: 110px;
+    z-index: 2; 
+}
+#ll {
+    z-index: 2;   
+    position: absolute;
+    right: 121.5vh;
+    top: 56vh;
+    height: fit-content;
+}
+#ll img {
+    height: 110px;
+    z-index: 2; 
+}
+#rl {
+    z-index: 2;   
+    position: absolute;
+    right: 114vh;
+    top: 56vh;
+    height: fit-content;
+}
+#rl img {
+    height: 110px;
+    z-index: 2; 
+}
