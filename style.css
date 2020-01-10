@@ -2,6 +2,9 @@
     margin:0;
     padding: 0;
 }
+html {
+    font-size: 16px;
+}
 
 .figure {
     position: absolute;
@@ -13,14 +16,12 @@
     display: absolute;
     width: 100%;
     height: 100vh;
-    border: 5px solid blue;
 }
 #noose img {
     position: absolute;
     right: 40vh;
     bottom: 5vh;
     height: 100vh;
-    border: 5px solid blue;
     z-index: 1;
 
 }
@@ -89,4 +90,46 @@
 #rl img {
     height: 110px;
     z-index: 2; 
+}
+
+.wrong {
+    right: 0;
+    top: 40vh;
+    width: 50%;
+    z-index: 3;   
+    position: absolute;
+    height: 10vh;
+    text-align: center;
+    border: 2px solid blue;
+    margin: auto;
+}
+.ansr {
+    right: 0;
+    top: 80vh;
+    width: 50%;
+    z-index: 3;   
+    position: absolute;
+    height: 10vh;
+    text-align: center;
+    border: 2px solid blue;
+    margin: auto;
+}
+header {
+    font-size: 7rem;
+    right: 0;
+    top: 10vh;
+    width: 50%;
+    z-index: 3;   
+    position: absolute;
+    height: 10vh;
+    text-align: center;
+    border: 2px solid blue;
+    margin: auto;
+}
+
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 2rem;
 }
