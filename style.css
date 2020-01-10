@@ -126,6 +126,19 @@ header {
     border: 2px solid blue;
     margin: auto;
 }
+div button {
+    cursor: pointer;
+    font-size: 1rem;
+    right: 700px;
+    top: 60vh;
+    width: fit-content;
+    z-index: 3;   
+    position: absolute;
+    height: fit-content;
+    text-align: center;
+    border: 2px solid blue;
+    margin: auto;
+}
 
 h1 {
     font-size: 5rem;
