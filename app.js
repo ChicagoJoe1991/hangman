@@ -9,11 +9,12 @@ let log = console.log;
 
 let dictionary = ["depaul", 'dabears', 'chicago'];
 let but = document.querySelector('div button');
-let ansrbox = document.getElementById('board').innerHTML
+let ansrbox = document.getElementById('board').innerHTML;
 let ansr = ''
 let guess = '';
 let counter = 0;
 let tog = false;
+let other = '';
 
 // document.body.addEventListener('keydown', processKeyPress, false);
 
@@ -40,23 +41,25 @@ const newGame = ansr => {
 but.addEventListener('click', () => {
     if(tog === false){
     ansr = randAnsr();
-    let board = newGame(ansr);
-    document.getElementById('board').innerHTML = board.toString();
-    play();
+    let board = newGame(ansr).toString();
+    document.getElementById('board').innerHTML = board;
     tog = true;
+    
+    play(board, ansr);
     }
 });
 
-const play = () => {
+const play = (board, ansr)=> {
     for(i=0;i<5;i++){
-        let guess = window.prompt("Guess: ");
+        let cool = '';
+        let guess = window.prompt("Guess: ").toString();
         for(j=0; j < ansr.length; j++) {
             if(guess === ansr[j]){
-                board[j] = ansr[j];
+                cool.push(ansr[j]);
             };
         };
-
-        ansrbox = board.toString();
+        log(cool);
+        document.getElementById('board').innerHTML = board;
     };
 
     tog = false;
