@@ -1,23 +1,17 @@
 let log = console.log;
 
-let name1 = new String('john');
-let name2 = new String('joey');
-let name3 = new String('----');
+let beg = '-------';
+let str = 'chicago';
+let char = 'c';
 
-name1.split('');
-name2.split('');
-name3.split('');
-
-
-
-for(i=0;i<name1.length;i++){
-    if(name1[i] === name2[i]){
-        log(name3[i]);
-        log(name1[i]);
-        name3[i] = name1[i];
+const charSwitch = (str, char, beg) => {
+    for(i=0;i<str.length;i++){ 
+        if(str[i] == char){
+            beg = beg.substr(0,i) + char + beg.substr(i+1);
+        };
     };
+    return beg;
 };
 
-name3.toString();
 
-log($name3);
+log(charSwitch(str,char,beg));

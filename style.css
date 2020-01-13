@@ -100,7 +100,17 @@ html {
     position: absolute;
     height: 10vh;
     text-align: center;
-    border: 2px solid blue;
+    border: 2px solid red;
+    margin: auto;
+}
+#wletters {
+    right: 0;
+    width: 100%;
+    z-index: 4;   
+    position: absolute;
+    height: 10vh;
+    text-align: center;
+    border: 2px solid green;
     margin: auto;
 }
 .ansr {
