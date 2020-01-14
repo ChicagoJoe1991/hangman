@@ -9,14 +9,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="figure"></div>
-    <div><header>HANGMAN</header></div>
-    <div class="wrong">
-        <h2>Wrong Answers: </h2>
-        <h3 id="wletters"></h3>
+    <div id="figure"></div>  
+    <div id="gplay">
+        <div><header id="titl">HANGMAN</header></div>
+        <div id="ngame"><button><h2>New Game</h2></button></div>
+        <div class="ansr"><h1><span id='board'></span></h1></div>
+        <div class="wrong">
+            <h2>Wrong Answers: </h2>
+            <h3 id="wletters"></h3>
+        </div>   
     </div>
-    <div><button>New Game</button></div>
-    <div class="ansr"><h1><span id='board'></span></h1></div>
     <script src="app.js"></script>
 </body>
 </html>

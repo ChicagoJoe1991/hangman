@@ -10,16 +10,15 @@ let log = console.log;
 let dictionary = ["depaul", 'dabears', 'chicago'];
 let but = document.querySelector('div button');
 let ansrbox = document.getElementById('board').innerHTML;
-let ansr = ''
 let guess = '';
-let tog = false;
 let sit = 'case0'
+
 document.getElementById('figure').innerHTML = '<img src=".//images/'+sit+'.png">';
 
 //choose a random item from array of words as the solution
 const randAnsr = () => {
-    const x = Math.floor(Math.random() * dictionary.length);
-    const ansr =  dictionary[x];
+    let x = Math.floor(Math.random() * dictionary.length);
+    let ansr =  dictionary[x];
     return ansr;  
 };
 
@@ -33,16 +32,31 @@ const newGame = ansr => {
 };
 
 
-//start a new game
-but.addEventListener('click', () => {
-    if(tog === false){
+//start a new game on load
+document.addEventListener('onload', () => {
+    let ansr = randAnsr();
+    let board = newGame(ansr).toString();
+    log(board);
+    document.getElementById('board').innerHTML = board;
+    document.getElementById('wletters').innerHTML = '';
+    document.getElementById('figure').innerHTML = '<img src=".//images/case0.png">';
+    document.getElementById('titl').innerHTML = 'HANGMAN';
+    guess = '';
+    play(board, ansr);
+});
+
+
+//start new game when button clicked
+but.addEventListener('click', (e) => {
     ansr = randAnsr();
     let board = newGame(ansr).toString();
     document.getElementById('board').innerHTML = board;
     document.getElementById('wletters').innerHTML = '';
-    tog = true;
+    document.getElementById('figure').innerHTML = '<img src=".//images/case0.png">';
+    document.getElementById('titl').innerHTML = 'HANGMAN';
+    guess = '';
     play(board, ansr);
-    }
+    e.preventDefault()
 });
 
 
@@ -59,17 +73,15 @@ const charSwitch = (str, char, beg) => {
 
 
 const play = (board, ansr)=> {
-    let counter = 0;
+    counter = 0;
     $(document).keydown(function(e){
-        let sit = '';
-        let guess = String.fromCharCode(e.which).toLowerCase();
+        sit = '';
+        guess = String.fromCharCode(e.which).toLowerCase();
         if(ansr.includes(guess)) {
             board = charSwitch(ansr,guess,board);
         }else{
             document.getElementById('wletters').innerHTML += guess;
             counter++;
-            console.log(counter);
-            log(sit);
             switch(counter){
                 case 1: sit = 'case1'; break;
                 case 2: sit = 'case2'; break;
@@ -77,40 +89,18 @@ const play = (board, ansr)=> {
                 case 4: sit = 'case4'; break;
                 case 5: sit = 'case5'; break;
                 case 6: sit = 'case6'; break;
-                
             };
             document.getElementById('figure').innerHTML = '<img src=".//images/'+sit+'.png">';
-
-    
-            log(sit);
-            console.log(counter);
-            
-            if(counter == 5){
-                alert('GameOver');
+         
+            if(counter == 6){
+                document.getElementById('titl').innerHTML = 'GAME OVER';
+                counter = 0;
             };
         };
+        log(board);
         document.getElementById('board').innerHTML = board;
-
-        
-        
     }); 
-    tog = false;
 };
-
-
-// switch(counter){
-//     case 1: document.getElementById('figure').outerHTML = '<img src=".//images/case1.png">';
-//     case 2: document.getElementById('figure').outerHTML = '<img src=".//images/case2.png">';
-//     case 3: document.getElementById('figure').outerHTML = '<img src=".//images/case3.png">';
-//     case 4: document.getElementById('figure').outerHTML = '<img src=".//images/case4.png">';
-//     case 5: document.getElementById('figure').outerHTML = '<img src=".//images/case5.png">';
-//     case 6: document.getElementById('figure').outerHTML = '<img src=".//images/case6.png">';
-// };
-
-
-
-
-
 
 
 
